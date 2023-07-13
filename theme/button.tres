@@ -1,0 +1,36 @@
+[gd_resource type="Theme" load_steps=11 format=2]
+
+[ext_resource path="res://asset/fonts/Baligle Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://asset/sprite/button/buttons_pressed.png" type="Texture" id=2]
+[ext_resource path="res://asset/sprite/button/buttons_normal.png" type="Texture" id=3]
+[ext_resource path="res://asset/sprite/button/buttons_hover.png" type="Texture" id=4]
+[ext_resource path="res://asset/sprite/button/panel.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 127, 140 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 128, 142 )
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 128, 142 )
+
+[sub_resource type="StyleBoxTexture" id=6]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 128, 142 )
+
+[resource]
+Button/fonts/font = SubResource( 3 )
+Button/styles/disabled = SubResource( 4 )
+Button/styles/focus = null
+Button/styles/hover = SubResource( 5 )
+Button/styles/normal = SubResource( 1 )
+Button/styles/pressed = SubResource( 6 )

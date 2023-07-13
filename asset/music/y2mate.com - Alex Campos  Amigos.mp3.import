@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/y2mate.com - Alex Campos  Amigos.mp3-557c43b286a4d883bde03f995249ed64.mp3str"
+
+[deps]
+
+source_file="res://asset/music/y2mate.com - Alex Campos  Amigos.mp3"
+dest_files=[ "res://.import/y2mate.com - Alex Campos  Amigos.mp3-557c43b286a4d883bde03f995249ed64.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

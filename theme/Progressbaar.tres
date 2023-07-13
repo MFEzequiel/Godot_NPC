@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=5 format=2]
+
+[ext_resource path="res://asset/sprite/ui/PNG/ProgressBar_06/BarV6_Bar.png" type="Texture" id=1]
+[ext_resource path="res://asset/sprite/ui/PNG/ProgressBar_08/BarV8_ProgressBar.png" type="Texture" id=2]
+
+[sub_resource type="StyleBoxTexture" id=24]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 272, 21 )
+
+[sub_resource type="StyleBoxTexture" id=25]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 270, 21 )
+
+[resource]
+ProgressBar/styles/bg = SubResource( 24 )
+ProgressBar/styles/fg = SubResource( 25 )

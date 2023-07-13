@@ -1,0 +1,433 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://asset/sprite/character/monster/Monsters_Creatures_Fantasy/Goblin/Idle.png" type="Texture" id=1]
+[ext_resource path="res://scripts/goblin.gd" type="Script" id=2]
+[ext_resource path="res://asset/sprite/ui/PNG/ProgressBar_01/BarV1_Bar.png" type="Texture" id=3]
+[ext_resource path="res://asset/sprite/ui/PNG/ProgressBar_02/BarV2_ProgressBar.png" type="Texture" id=4]
+[ext_resource path="res://asset/fonts/Baligle Regular.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://asset/sprite/character/monster/Monsters_Creatures_Fantasy/Goblin/Attack.png" type="Texture" id=6]
+[ext_resource path="res://asset/sprite/character/monster/Monsters_Creatures_Fantasy/Goblin/Run.png" type="Texture" id=7]
+[ext_resource path="res://asset/sprite/character/monster/Monsters_Creatures_Fantasy/Goblin/Death.png" type="Texture" id=8]
+
+[sub_resource type="Animation" id=18]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("spr:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spr:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spr:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spr:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "attack"
+length = 0.75
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spr:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spr:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spr:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spr:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "deadth"
+length = 0.65
+tracks/0/type = "value"
+tracks/0/path = NodePath("spr:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spr:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spr:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spr:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "hurt"
+
+[sub_resource type="Animation" id=14]
+resource_name = "idle"
+length = 0.65
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spr:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spr:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spr:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spr:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "run"
+length = 0.75
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spr:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("spr:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("spr:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("spr:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 8.5, 3.5 )
+
+[sub_resource type="StyleBoxTexture" id=8]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 271, 21 )
+
+[sub_resource type="StyleBoxTexture" id=9]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 272, 21 )
+
+[sub_resource type="DynamicFont" id=10]
+outline_size = 1
+outline_color = Color( 0, 0.054902, 0.376471, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "attack"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "deadth"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "hurt"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "idle"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "run"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id=50]
+states/attack/node = SubResource( 35 )
+states/attack/position = Vector2( 416.482, 269.667 )
+states/deadth/node = SubResource( 36 )
+states/deadth/position = Vector2( 416.531, 71 )
+states/hurt/node = SubResource( 37 )
+states/hurt/position = Vector2( 573.667, 161.37 )
+states/idle/node = SubResource( 38 )
+states/idle/position = Vector2( 418.111, 163 )
+states/run/node = SubResource( 39 )
+states/run/position = Vector2( 281.667, 163.444 )
+transitions = [ "attack", "idle", SubResource( 40 ), "idle", "attack", SubResource( 41 ), "run", "deadth", SubResource( 42 ), "idle", "deadth", SubResource( 43 ), "idle", "run", SubResource( 44 ), "run", "idle", SubResource( 45 ), "run", "attack", SubResource( 46 ), "attack", "run", SubResource( 47 ), "idle", "hurt", SubResource( 48 ), "hurt", "idle", SubResource( 49 ) ]
+start_node = "idle"
+end_node = "deadth"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=29]
+
+[sub_resource type="CapsuleShape2D" id=34]
+radius = 13.0
+height = 14.0
+
+[node name="goblin" type="KinematicBody2D" groups=["enemy"]]
+position = Vector2( 0, -1 )
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+move = true
+
+[node name="spr" type="Sprite" parent="."]
+texture = ExtResource( 6 )
+hframes = 8
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 18 )
+anims/attack = SubResource( 12 )
+anims/deadth = SubResource( 30 )
+anims/hurt = SubResource( 17 )
+anims/idle = SubResource( 14 )
+anims/run = SubResource( 16 )
+
+[node name="col" type="CollisionShape2D" parent="."]
+position = Vector2( -1.5, 22.5 )
+shape = SubResource( 6 )
+
+[node name="hp" type="ProgressBar" parent="."]
+margin_left = -10.0
+margin_top = -13.0
+margin_right = 32.0
+margin_bottom = -8.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_styles/fg = SubResource( 8 )
+custom_styles/bg = SubResource( 9 )
+value = 50.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="level" type="Label" parent="."]
+margin_left = -10.0
+margin_top = -29.0
+margin_right = 34.0
+margin_bottom = -8.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 10 )
+text = "Lv 1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="detect" type="RayCast2D" parent="."]
+position = Vector2( 14, 0 )
+enabled = true
+cast_to = Vector2( 100, 0 )
+
+[node name="state" type="AnimationTree" parent="."]
+tree_root = SubResource( 50 )
+anim_player = NodePath("../anim")
+active = true
+parameters/playback = SubResource( 29 )
+
+[node name="enemy_sworld" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="col" type="CollisionPolygon2D" parent="enemy_sworld"]
+polygon = PoolVector2Array( 29, 6, 28, 22, 9, 22, -9, 13, -1, 6, 12, 12 )
+
+[node name="hurt_box" type="Area2D" parent="."]
+position = Vector2( 1, 0 )
+collision_layer = 2
+
+[node name="col" type="CollisionShape2D" parent="hurt_box"]
+position = Vector2( 0, 7 )
+shape = SubResource( 34 )
+
+[connection signal="area_entered" from="hurt_box" to="." method="_hurt_box_entered"]
